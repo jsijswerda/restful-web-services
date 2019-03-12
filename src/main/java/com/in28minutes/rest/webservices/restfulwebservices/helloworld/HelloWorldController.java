@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloWorldController {
 	
-	@Autowired
+	@Autowired//internationalization
 	private MessageSource messageSource;
 	
 	@GetMapping(path="/hello-world")

@@ -56,7 +56,7 @@ public class UserResource {
 	public ResponseEntity<Object> createUser(@Valid @RequestBody User user) {
 		User savedUser = service.save(user);
 		
-		
+		//send 201 back
 		URI location = ServletUriComponentsBuilder.
 		fromCurrentRequest()
 		.path("/{id}")
