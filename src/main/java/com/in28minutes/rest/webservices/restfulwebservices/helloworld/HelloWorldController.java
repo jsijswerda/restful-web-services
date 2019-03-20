@@ -21,21 +21,21 @@ public class HelloWorldController {
 	}
 
 
-		@GetMapping(path="/hello-world-bean")
-		public HelloWorldBean helloWorldBean() {
-			return new HelloWorldBean("Hello World");
-		}
+	@GetMapping(path="/hello-world-bean")
+	public HelloWorldBean helloWorldBean() {
+		return new HelloWorldBean("Hello World");
+	}
 
-		@GetMapping(path="/hello-world/path-variable/{name}")
-		public HelloWorldBean helloWorldPathVariable(@PathVariable  String name) {
-			return new HelloWorldBean(String.format("Hello World, %s", name)) ;
-		}
+	@GetMapping(path="/hello-world/path-variable/{name}")
+	public HelloWorldBean helloWorldPathVariable(@PathVariable  String name) {
+		return new HelloWorldBean(String.format("Hello World, %s", name)) ;
+	}
 
-		
-		@GetMapping(path="/hello-world-internationalized")
-		public String helloWorldInternationalized(@RequestHeader(name="Accept-Language", required=false) Locale locale) {
-			return messageSource.getMessage("good.morning.message", null, locale);
-		}
+	
+	@GetMapping(path="/hello-world-internationalized")
+	public String helloWorldInternationalized(@RequestHeader(name="Accept-Language", required=false) Locale locale) {
+		return messageSource.getMessage("good.morning.message", null, locale);
+	}
 	
 		
 }
