@@ -4,8 +4,6 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter.DEFAULT;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -15,9 +13,8 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-//Configuration
+
 @Configuration
-//Enable Swagger
 @EnableSwagger2
 public class SwaggerConfig {
 	  public static final Contact DEFAULT_CONTACT = new Contact("Jasper Syswerda", "http://leukeapi.com", "leukeapi@gmail.com");
@@ -30,10 +27,10 @@ public class SwaggerConfig {
 	@Bean
 	public Docket api()
 	{
-		return new Docket(DocumentationType.SWAGGER_2).apiInfo(DEFAULT_API_INFO).produces(DEFAULT_PRODUCES_AND_CONSUMES).consumes(DEFAULT_PRODUCES_AND_CONSUMES);
+		return new Docket(DocumentationType.SWAGGER_2)
+				.apiInfo(DEFAULT_API_INFO)
+				.produces(DEFAULT_PRODUCES_AND_CONSUMES)
+				.consumes(DEFAULT_PRODUCES_AND_CONSUMES);
 	}
-	//Bean - Docket
-	//Swagger2
-	//Paths
-	//Apis
+
 }
